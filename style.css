@@ -1,0 +1,3522 @@
+
+        /*초기화*/
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        li {
+            list-style-type: none;
+        }
+
+        a:link,
+        a:visited {
+            text-decoration: none;
+            color: #272848;
+        }
+
+        body {
+            color: #272848;
+            font-family: 'Montserrat-Medium', 'NotoSansKR-Regular', sans-serif;
+        }
+
+
+        @font-face {
+            font-family: "NotoSansKR-Regular";
+            src: url("font/NotoSansKR-Regular.woff");
+        }
+
+        @font-face {
+            font-family: "Montserrat-Medium";
+            src: url("font/Montserrat-Medium.woff");
+        }
+
+        @font-face {
+            font-family: "Montserrat-Regular";
+            src: url("font/Montserrat-Regular.woff");
+        }
+
+
+        /*
+			[ color ]
+
+			#6d71f9
+			#54cafb
+			#272848
+			#eeff0f8
+		*/
+
+        /*####################### skipNav ##########################*/
+        #skipNav {
+            width: 220px;
+            height: 50px;
+            position: absolute;
+        }
+
+        #skipNav .skip {
+            width: 220px;
+            height: 50px;
+            overflow: hidden;
+        }
+
+        #skipNav .skip li {
+            width: 220px;
+            height: 50px;
+            line-height: 50px;
+        }
+
+        #skipNav .skip li a {
+            display: block;
+            width: 220px;
+            height: 50px;
+            border-radius: 50px;
+            text-align: center;
+            background-color: #6d71f9;
+            color: #fff;
+            font-size: 14px;
+            position: absolute;
+            top: -50px;
+            left: 0;
+        }
+
+        #skipNav .skip li a:focus {
+            top: 0px;
+        }
+
+        /*########################## wrap  ##########################*/
+        /* 우선 해상도 대비,  반응형 대비 거리 지정 */
+        #wrap {
+            max-width: 1920px;
+            width: 100%;
+            margin: 0 auto;
+        }
+
+        /*########################## header  ##########################*/
+
+        #header {
+            width: 100%;
+            height: 120px;
+            box-shadow: 5px 3px 10px rgba(0, 0, 0, 0.3);
+        }
+
+        /*############ 버리는 영역 만들기##############*/
+        h1 {
+            position: absolute;
+            left: -9999px;
+            width: 1px;
+            height: 1px;
+            font-size: 1px;
+            line-height: 0;
+            overflow: hidden;
+        }
+
+        /*########################## headerWrap  ############################*/
+        #headerWrap {
+            width: 100%;
+            font-family: "Montserrat-Regular";
+        }
+
+        /* 로고영역*/
+        #mainmenuWrap {
+            width: 100%;
+        }
+
+        #mainmenuWrap .menuArea {
+            width: 1300px;
+            height: 120px;
+            margin: 0 auto;
+            position: relative;
+        }
+
+        #mainmenuWrap .menuArea p {
+            width: 100px;
+            height: 60px;
+            position: absolute;
+            left: 50%;
+            top: 50%;
+            transform: translate(-50%, -50%);
+        }
+
+        #mainmenuWrap .menuArea p img {
+            width: 100%;
+            animation: logo 2s;
+        }
+
+        /*기능 :애니메이션 - 로고 회전 */
+        @keyframes logo {
+            0% {
+                transform: rotatey(0deg);
+            }
+
+            100% {
+                transform: rotatey(360deg);
+            }
+        }
+
+        /*############# mainmenuWrap / .infoMenu ############# */
+        #mainmenuWrap .menuArea .infoMenu {
+            width: 1280px;
+            margin-right: 20px;
+            height: 40px;
+            line-height: 40px;
+            padding-bottom: 10px;
+        }
+
+        #mainmenuWrap .menuArea .infoMenu ul {
+            width: 240px;
+            margin-left: 1040px;
+            padding-bottom: 10px;
+            text-align: center;
+        }
+
+        #mainmenuWrap .menuArea .infoMenu li {
+            width: 50px;
+            height: 20px;
+            line-height: 20px;
+            padding: 3px 15px;
+            margin: 10px 0;
+            font-size: 13px;
+            float: left;
+        }
+
+        #mainmenuWrap .menuArea .infoMenu li a {
+            font-weight: 700;
+        }
+
+        #mainmenuWrap .menuArea .infoMenu li:last-child {
+            border-radius: 15px;
+            background-color: #272848;
+        }
+
+        #mainmenuWrap .menuArea .infoMenu li:last-child a {
+            color: #fff;
+            font-weight: 700;
+            font-size: 12px;
+        }
+
+        /*############# mainmenuWrap / gnbArea ############## */
+        #gnbArea {
+            width: 100%;
+            height: 60px;
+        }
+
+        #gnbArea .gnb {
+            width: 900px;
+            height: 100%;
+            float: left;
+        }
+
+        #gnbArea .gnb li {
+            width: 130px;
+            height: 30px;
+            line-height: 30px;
+            padding-top: 15px;
+            position: relative;
+            font-weight: 600;
+            float: left;
+        }
+
+        #gnbArea .gnb li a {}
+
+        #gnbArea .gnb li:last-child {
+            padding-left: 20px;
+        }
+
+        /* 기능: 마우스 hover*/
+        #gnbArea .gnb li .circle {
+            width: 20px;
+            height: 20px;
+            border-radius: 10px;
+            background-color: #aad;
+            position: absolute;
+            left: 0;
+            top: 0;
+            z-index: -1;
+            display: none;
+        }
+
+        #gnbArea .gnb li:hover .circle {
+            display: block;
+        }
+
+        #gnbArea .gnb li:hover {
+            font-size: 18px;
+        }
+
+        /*높이값 변경시 오른쪽 20px생각해줄것!좌우 비슷하게 맞춤!*/
+        #gnbArea .gnbicon {
+            width: 380px;
+            height: 60px;
+            float: left;
+        }
+
+        #gnbArea .gnbicon li {
+            width: 30px;
+            height: 30px;
+            margin-left: 60px;
+            margin-top: 15px;
+            float: left;
+        }
+
+        #gnbArea .gnbicon li a {
+            display: block;
+            text-align: center;
+        }
+
+        #gnbArea .gnbicon li a img {
+            width: 100%;
+        }
+
+        #gnbArea .gnbicon li:first-child {
+            display: none;
+        }
+
+        /*############# submenuWrap ############# */
+        #submenuWrap {
+            width: 100%;
+        }
+
+        #submenuArea {
+            width: 1300px;
+            margin: 0 auto;
+            position: relative;
+        }
+
+        #submenuArea .produtArea {
+            width: 500px;
+            height: 500px;
+            position: absolute;
+            top: 0;
+            left: 500px;
+            display: none;
+        }
+
+        #submenuArea .produtArea div {
+            width: 500px;
+            float: left;
+        }
+
+        #submenuArea .produtArea dl {
+            position: absolute;
+            top: 150px;
+            left: 0;
+        }
+
+        #submenuArea .produtArea dt {
+            height: 30px;
+        }
+
+        #submenuArea .produtArea .more {
+            width: 120px;
+            background-color: #aaa;
+            border-radius: 20px;
+        }
+
+        #submenuArea .produtArea p {
+            width: 350px;
+            position: absolute;
+            top: 0;
+            left: 150px;
+        }
+
+        #submenuArea .produtArea p img {
+            width: 100%;
+        }
+
+
+        #submenuArea ul {
+            width: 130px;
+            float: left;
+            display: none;
+        }
+
+        #submenuArea ul li {
+            width: 130px;
+            height: 70px;
+            line-height: 70px;
+            position: relative;
+        }
+
+        /*기능:마우스 hover*/
+        #submenuArea ul li span {
+            width: 1px;
+            height: 1px;
+            transition: all 0.2s linear;
+            position: absolute;
+            top: 0px;
+            left: 0px;
+            z-index: -1;
+        }
+
+        #submenuArea ul li:hover span {
+            width: 50px;
+            height: 50px;
+            border-radius: 25px;
+            background-color: #add;
+        }
+
+        #submenuArea ul li:hover .subCircle {
+            top: 5px;
+            left: 35px;
+        }
+
+        #submenuArea .artshop li:hover span {
+            top: 5px;
+            left: 15px;
+        }
+
+        #submenuArea .artshop li:hover .subC0 {
+            left: 25px;
+            background-color: #acc;
+        }
+
+        #submenuArea .artshop li:hover .subC1 {
+            background-color: #add;
+        }
+
+        #submenuArea .artshop li:hover .subC2 {
+            background-color: #f00;
+        }
+
+        #submenuArea .artshop li:hover .subC3 {
+            background-color: #fac;
+        }
+
+        #submenuArea .artshop li:hover .subC4 {
+            left: 25px;
+            background-color: #adc;
+        }
+
+
+        /*########################## container  ##########################*/
+
+        #container {
+            width: 100%;
+            margin: 0 auto;
+        }
+
+        /*############################ sect_main  ############################*/
+        #sect_main {
+            width: 100%;
+            height: 700px;
+            padding-top: 70px;
+            overflow: hidden;
+        }
+
+        #main_slide {
+            width: 1100px;
+            height: 600px;
+            margin: 0 auto;
+            position: relative;
+        }
+
+        #main_slide .slideArea {
+            width: 3600px;
+            height: 100%;
+        }
+
+        #main_slide .slideArea .slideList {
+            width: 1040px;
+            float: left;
+            position: relative;
+            margin: 0 30px
+        }
+
+        #main_slide .slide_desc {
+            width: 1000px;
+            position: absolute;
+            top: 120px;
+            left: 80px;
+            font-size: 24px;
+            color: #fff;
+        }
+
+        #main_slide .slide_desc p {
+            width: 150px;
+            border-radius: 30px;
+            border: 2px solid #fff;
+            text-align: center;
+            font-size: 20px;
+            padding: 5px 0;
+        }
+
+        #main_slide .slide_desc h4 {
+            font-size: 30px;
+            padding-top: 10px;
+        }
+
+        #main_slide .slide_desc h3 {
+            font-size: 40px;
+            text-transform: uppercase;
+        }
+
+        #main_slide .slide_img img {
+            width: 100%;
+            border-radius: 15px;
+        }
+
+        /*버튼에 해당*/
+        #main_slide .mainBtnArea {
+            width: 180px;
+            height: 50px;
+            position: absolute;
+            top: 550px;
+            right: 30px;
+            z-index: 2;
+        }
+
+        #main_slide .mainBtnArea a {
+            display: block;
+            width: 50px;
+            height: 50px;
+            margin-left: 10px;
+            border-radius: 25px;
+            float: left;
+            background-color: rgba(179, 179, 179, 0.5);
+        }
+
+        #main_slide .mainBtnArea img {
+            width: 100%;
+            border-radius: 25px;
+        }
+
+        /* 모바일 영역에 해당함 */
+        #main_slide .slide_desc .subtitle {
+            display: none;
+        }
+
+        #main_slide .slide_img a {
+            display: block;
+            width: 100%;
+        }
+
+        #main_slide .mslide_img {
+            display: none;
+        }
+
+
+
+
+
+        /*############################ sect_newart  ############################*/
+        /* 
+			이슈) 
+			우선 구획만 설정해 놓음! 
+			1) 여백 디테일
+			2) 높이값 설정 
+
+		*/
+        #sect_newart {
+            width: 100%;
+            height: 800px;
+            padding-top: 50px;
+            position: relative;
+            overflow: hidden;
+        }
+
+        #newart_wrap {
+            width: 100%;
+        }
+
+        /* bg area 배경패턴*/
+        #bgArea p {
+            position: absolute;
+        }
+
+        #bgArea .bgimg {
+            bottom: 122px;
+            left: 127px;
+        }
+
+        #bgArea .bgimg img {
+            width: 70%;
+            opacity: 0.5;
+        }
+
+        #bgArea .bgimg0 {
+            top: 0;
+            right: 0;
+        }
+
+        #bgArea .bgimg2 {
+            top: 0;
+            left: 0;
+        }
+
+        #bgArea .bgimg1 img {
+            width: 75%;
+        }
+
+        #bgArea .bgimg1 {
+            bottom: 0;
+            right: -57px;
+        }
+
+        /*############ sect_newart /newart_desc ###########*/
+        #newart_desc {
+            width: 1000px;
+            margin: 0 auto;
+        }
+
+        #newart_desc h3 {
+            width: 100%;
+            padding: 10px 0;
+            color: #6d71f9;
+            font-size: 18px;
+        }
+
+        /*############ sect_newart / newart_desc  / .descList ###########*/
+        #newart_desc .descList {
+            width: 100%;
+            overflow: hidden;
+        }
+
+        #newart_desc .descList ul {
+            width: 10000px;
+        }
+
+        #newart_desc .descList li {
+            width: 1000px;
+            height: 200px;
+            float: left;
+        }
+
+        #newart_desc .descList li a {
+            display: block;
+            width: 100%;
+            font-size: 20px;
+        }
+
+        /*descList 디테일(글씨, 간격)*/
+        #newart_desc .descList li a strong {
+            display: block;
+            font-size: 50px;
+            line-height: normal;
+            margin-bottom: 5px;
+        }
+
+        #newart_desc .descList li a span {
+            display: block;
+        }
+
+        #newart_desc .descList li a em {
+            display: block;
+            font-style: normal;
+            font-size: 25px;
+            padding-top: 20px;
+            font-weight: 700;
+        }
+
+        /*############ sect_newart / newart_img  ###########*/
+        #newart_img {
+            width: 100%;
+            overflow: hidden;
+        }
+
+        #newart_img .imgList {
+            width: 300px;
+            height: 300px;
+            margin: 0 auto;
+            /*overflow:hidden;*/
+        }
+
+        #newart_img .imgList ul {
+            width: 30000px;
+            height: 400px;
+            /*overflow:hidden;*/
+        }
+
+        #newart_img .imgList li {
+            width: 300px;
+            height: 300px;
+            transition: transform 0.5s;
+            margin-right: 50px;
+            float: left;
+            border-radius: 150px;
+            overflow: hidden;
+        }
+
+        #newart_img .imgList a {
+            display: block;
+            width: 100%;
+            height: 100%;
+        }
+
+        #newart_img .imgList li img {
+            width: 100%;
+        }
+
+
+
+        /*############################ sect_mainArtist  ############################*/
+        #sect_mainArtist {
+            width: 100%;
+            height: 500px;
+            padding: 100px 0;
+        }
+
+        #art_wrap {
+            width: 100%;
+            height: 400px;
+            padding: 25px 0;
+            background-color: #322876;
+            margin: 0 auto;
+        }
+
+        #art_cont {
+            width: 1100px;
+            height: 500px;
+            margin: 0 auto;
+            position: relative;
+        }
+
+        #art_box {
+            width: 1100px;
+            height: 400px;
+            margin: 0 auto;
+        }
+
+        /* 기능:bg 움직이는 애니메이션 효과 */
+        #art_box .bgDeco p {
+            width: 100px;
+            height: 100px;
+            opacity: 0.5;
+            position: absolute;
+            top: 0;
+            left: 0;
+            z-index: 2;
+        }
+
+        #art_box .bgDeco p img {
+            width: 100%;
+            border-radius: 50px;
+        }
+
+        #art_box .bgDeco .bgImg0 {
+            top: -15px;
+            left: 565px;
+            animation: bgmove 3s infinite alternate;
+        }
+
+        @keyframes bgmove {
+            0% {
+                transform: scale(0.5);
+            }
+
+            100% {
+                transform: scale(1);
+            }
+        }
+
+        #art_box .bgDeco .bgImg1 {
+            top: 285px;
+            left: 636px;
+            animation: bgmove1 2s infinite alternate;
+        }
+
+        @keyframes bgmove1 {
+            0% {
+                transform: scale(0.8);
+            }
+
+            100% {
+                transform: scale(1);
+            }
+        }
+
+        #art_box .bgDeco .bgImg2 {
+            top: 100px;
+            left: 150px;
+            animation: bgmove2 3s infinite alternate;
+        }
+
+        @keyframes bgmove2 {
+            0% {
+                transform: scale(1);
+            }
+
+            100% {
+                transform: scale(0.7);
+            }
+        }
+
+        #art_box .bgDeco span {
+            width: 50px;
+            height: 50px;
+            border-radius: 25px;
+            background-color: #fff;
+            position: absolute;
+            top: 0;
+            left: 0;
+            z-index: 3;
+        }
+
+        #art_box .bgDeco .cir1 {
+            top: 0;
+            left: 300px;
+            opacity: 0.2;
+            transform: scale(0.5);
+        }
+
+        #art_box .bgDeco .cir2 {
+            top: 0px;
+            left: 45px;
+            opacity: 0.2;
+            transform: scale(1.2);
+        }
+
+        #art_box .bgDeco .cir3 {
+            top: -30px;
+            left: 666px;
+            opacity: 0.3;
+            transform: scale(0.4);
+        }
+
+        #art_box .bgDeco .cir4 {
+            top: 187px;
+            left: 124px;
+            opacity: 0.4;
+            transform: scale(0.5);
+        }
+
+        #art_box .bgDeco .cir5 {
+            top: 300px;
+            left: 800px;
+            opacity: 0.4;
+            transform: scale(0.8);
+        }
+
+        /*##############################################################*/
+
+        #art_box .DescArea {
+            width: 900px;
+            height: 240px;
+            padding: 80px 0;
+            position: relative;
+            background-image: url("img/art_bg0.png");
+            background-repeat: no-repeat;
+            background-position: right;
+            background-size: 35%;
+        }
+
+        #art_box .artistDesc {
+            width: 900px;
+            height: 400px;
+            text-align: center;
+            color: #fff;
+            position: absolute;
+            left: 0;
+            top: 0px
+        }
+
+        #art_box .artistDesc h4 {
+            height: 150px;
+            font-size: 18px;
+            line-height: 295px;
+            background-image: url("img/white_logo.png");
+            background-repeat: no-repeat;
+            background-position: 50%;
+            background-size: 15%;
+            font-family: "EN";
+        }
+
+        #art_box .artistDesc h3 {
+            font-size: 26px;
+            padding-top: 20px;
+        }
+
+        #art_box .artistDesc p {
+            font-size: 18px;
+            padding: 20px 0;
+        }
+
+        #art_box .artistDesc span {
+            line-height: 35px;
+            opacity: 0.8;
+        }
+
+        #art_box .artistDesc .moreBtn {
+            position: absolute;
+            left: 280px;
+            top: 330px;
+        }
+
+        #art_box .artistDesc .moreBtn a {
+            display: block;
+            width: 300px;
+            padding: 10px 20px;
+            border-radius: 25px;
+            background-color: #fff;
+        }
+
+
+        #art_box .artistImg {
+            width: 200px;
+            height: 640px;
+            position: absolute;
+            bottom: 0;
+            right: 0;
+            overflow: hidden;
+        }
+
+        #art_box .artistImg ul {
+            width: 100%;
+            height: 1980px;
+        }
+
+        #art_box .artistImg li {
+            width: 200px;
+            height: 200px;
+            margin-bottom: 20px;
+            position: relative;
+        }
+
+        #art_box .artistImg li a {
+            display: block;
+            width: 100%;
+            height: 100%;
+        }
+
+        #art_box .artistImg li img {
+            width: 100%;
+            border-radius: 25px;
+        }
+
+        #art_box .artistImg .text {
+            display: none;
+            color: #fff;
+            width: 200px;
+            height: 50px;
+            border-radius: 0 0 25px 25px;
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            background-color: rgba(0, 0, 0, 0.5);
+            text-align: center;
+        }
+
+        /*기능 :hover - 제품 정보*/
+        #art_box .artistImg li:hover .text {
+            display: block;
+        }
+
+        #art_box .artistImg .text b {
+            display: block;
+        }
+
+        /*script 기능 버튼*/
+        #art_box .cirBtn {
+            width: 12px;
+            height: 100px;
+            position: absolute;
+            top: 0;
+            right: -40px;
+        }
+
+        #art_box .cirBtn a {
+            display: block;
+            width: 11px;
+            height: 11px;
+            border-radius: 6px;
+            background-color: #fff;
+            margin-bottom: 15px;
+            border: 1px solid #fff;
+        }
+
+        /*####### 이벤트 클래스 ########*/
+        .cirClick {
+            background-color: #322876;
+        }
+
+
+
+        /*##################### sect_banner  #######################*/
+        /*
+			이슈) 
+				1) 글씨 크기 변경!  폰트 변경 해야함!! 이쁘지 않아!!!! 
+		*/
+        #sect_banner {
+            width: 100%;
+            height: 300px;
+        }
+
+        #sect_banner p {
+            width: 100%;
+            height: 200px;
+            padding: 50px 0;
+        }
+
+        #sect_banner p a {
+            display: block;
+            width: 1600px;
+            height: 200px;
+            background-color: #f5e0dd;
+            color: #d6474d;
+            border-radius: 15px;
+            margin: 0 auto;
+            background-image: url("img/banner_bg.png");
+            background-repeat: no-repeat;
+            background-position: 1350px 50px;
+        }
+
+
+        #sect_banner p a .text_left {
+            width: 400px;
+            height: 100%;
+            float: left;
+        }
+
+        #sect_banner p a .text_left b {
+            display: block;
+            width: 100%;
+            line-height: 200px;
+            text-align: center;
+        }
+
+        #sect_banner p a .text_left b i {
+            font-size: 25px;
+            font-style: normal;
+            border: 3px solid #d6474d;
+            border-radius: 30px;
+            padding: 10px 30px;
+        }
+
+        #sect_banner p a .text_right {
+            width: 1200px;
+            height: 100%;
+            float: left;
+        }
+
+        #sect_banner p a .text_right strong {
+            display: block;
+            font-size: 50px;
+            padding: 40px 20px 0;
+        }
+
+        #sect_banner p a .text_right em {
+            display: block;
+            padding-left: 400px;
+            font-size: 25px;
+            padding-top: 10px;
+            font-style: normal;
+        }
+
+        #sect_banner p a .text_right .m_text {
+            display: none;
+        }
+
+        #sect_banner p a .date {
+            display: none;
+        }
+
+
+
+
+        /*#################### sect_todaypick  ###################*/
+        #sect_todaypick {
+            width: 100%;
+            height: 670px;
+            padding: 50px 0;
+        }
+
+
+
+        /*############# sect_todaypick / pick_wrap ########*/
+        #sect_todaypick #pick_wrap {
+            width: 100%;
+        }
+
+        /*############ pick_wrap / pick_title  ###########*/
+        #pick_wrap .pick_title {
+            width: 1200px;
+            height: 120px;
+            margin: 0 auto;
+        }
+
+        #pick_wrap .pick_title h3 {
+            width: 375px;
+            height: 70px;
+            float: left;
+            padding-left: 25px;
+            font-size: 25px;
+            color: #6d71f9;
+        }
+
+        #pick_wrap .pick_title h3 span {
+            font-size: 18px;
+            padding-left: 10px;
+            color: #272848;
+        }
+
+        #pick_wrap .pick_title .select_btn {
+            width: 600px;
+            height: 60px;
+            margin-right: 10px;
+            padding-top: 40px;
+            float: right;
+        }
+
+        #pick_wrap .pick_title .select_btn li {
+            width: 100px;
+            float: left;
+            text-align: center;
+            margin-left: 15px;
+        }
+
+        #pick_wrap .pick_title .select_btn li a {
+            display: block;
+            padding: 6px 0;
+            width: 100%;
+            height: 20px;
+            line-height: 20px;
+            background-color: #f7f8ff;
+            border: 1px solid #dddef5;
+            border-radius: 20px;
+        }
+
+        /*############# 이벤트 클래스 ##############*/
+        .removeBtn {
+            color: #272848;
+            border: 1px solid #dddef5;
+        }
+
+        .selectBtn {
+            color: #f00;
+            border: 1px solid #7B75F3;
+        }
+
+        /*############ pick_wrap / pick_cont  ###########*/
+
+        #pick_wrap .pick_cont {
+            width: 100%;
+            text-align: center;
+        }
+
+        #pick_wrap .pick_cont ul {
+            width: 1200px;
+            height: 450px;
+            margin: 0 auto;
+            /*display:none;*/
+        }
+
+        #pick_wrap .pick_cont li {
+            width: 350px;
+            height: 100%;
+            float: left;
+            background: #add;
+            border-radius: 15px;
+            margin: 0 25px;
+            background-repeat: no-repeat;
+            position: relative;
+        }
+
+        /*background-image*/
+        #pick_wrap .pick_cont .bgBlur01 {
+            background-image: url("img/pBlur0.png");
+        }
+
+        #pick_wrap .pick_cont .bgBlur02 {
+            background-image: url("img/pBlur1.png");
+        }
+
+        #pick_wrap .pick_cont .bgBlur03 {
+            background-image: url("img/pBlur2.png");
+        }
+
+        #pick_wrap .pick_cont .bgBlur04 {
+            background-image: url("img/paB0.png");
+        }
+
+        #pick_wrap .pick_cont .bgBlur05 {
+            background-image: url("img/paB1.png");
+        }
+
+        #pick_wrap .pick_cont .bgBlur06 {
+            background-image: url("img/paB2.png");
+        }
+
+        #pick_wrap .pick_cont .bgBlur07 {
+            background-image: url("img/prB0.png");
+        }
+
+        #pick_wrap .pick_cont .bgBlur08 {
+            background-image: url("img/prB1.png");
+        }
+
+        #pick_wrap .pick_cont .bgBlur09 {
+            background-image: url("img/prB2.png");
+        }
+
+        #pick_wrap .pick_cont .bgBlur10 {
+            background-image: url("img/crB0.png");
+        }
+
+        #pick_wrap .pick_cont .bgBlur11 {
+            background-image: url("img/crB1.png");
+        }
+
+        #pick_wrap .pick_cont .bgBlur12 {
+            background-image: url("img/crB2.png");
+        }
+
+        #pick_wrap .pick_cont .bgBlur13 {
+            background-image: url("img/artPB0.png");
+        }
+
+        #pick_wrap .pick_cont .bgBlur14 {
+            background-image: url("img/artPB1.png");
+        }
+
+        #pick_wrap .pick_cont .bgBlur15 {
+            background-image: url("img/artPB2.png");
+        }
+
+
+        #pick_wrap .pick_cont li a {
+            display: block;
+            width: 300px;
+            height: 300px;
+            padding: 25px;
+        }
+
+        #pick_wrap .pick_cont li a img {
+            width: 100%;
+            border-radius: 20px;
+            box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
+        }
+
+        /* ####### text 영역 ######*/
+        #pick_wrap .pick_cont .text {
+            width: 100%;
+            height: 100px;
+            line-height: 30px;
+            color: #fff;
+        }
+
+        #pick_wrap .pick_cont .text strong {
+            font-size: 20px;
+        }
+
+        /*##### 더보기 버튼 ######*/
+
+        #pick_wrap .pick_cont .moreBtn {
+            width: 48px;
+            height: 48px;
+            display: none;
+            border-radius: 25px;
+            position: absolute;
+            top: 65%;
+            left: 50%;
+            transform: translatex(-50%);
+            border: 1px solid #fff;
+            z-index: 2;
+        }
+
+        #pick_wrap .pick_cont .moreBtn a {
+            display: block;
+            width: 50px;
+            height: 50px;
+            line-height: 50px;
+            padding: 0;
+            font-size: 20px;
+            color: #fff;
+        }
+
+
+        /*############################ sect_hotclass  ############################*/
+        #sect_hotclass {
+            width: 100%;
+            height: 650px;
+            padding: 50px 0;
+            background-color: #e8e6f3;
+        }
+
+        #class_wrap {
+            width: 100%;
+        }
+
+        /*############ class_wrap / class_title  ###########*/
+        #class_wrap .class_title {
+            width: 1200px;
+            height: 80px;
+            padding-left: 25px;
+            margin: 0 auto;
+        }
+
+        #class_wrap .class_title h3 {
+            width: 500px;
+            height: 100%;
+            float: left;
+            font-size: 25px;
+            color: #6d71f9;
+        }
+
+        #class_wrap .class_title h3 span {
+            font-size: 18px;
+            padding-left: 20px;
+            color: #272848;
+        }
+
+        #class_wrap .class_title p {
+            width: 630px;
+            margin-right: 50px;
+            float: left;
+            text-align: right;
+            font-weight: 700;
+        }
+
+        /*############ class_wrap / class_cont  ###########*/
+
+        #class_wrap .class_cont {
+            width: 100%;
+        }
+
+        #class_wrap .class_cont ul {
+            width: 1200px;
+            height: 500px;
+            margin: 0 auto;
+        }
+
+        #class_wrap .class_cont li {
+            width: 370px;
+            height: 500px;
+            float: left;
+            /*background:#add;*/
+        }
+
+        #class_wrap .class_cont li a {
+            display: block;
+            color: #fff;
+        }
+
+
+        #class_wrap .class_cont .text {
+            display: block;
+            position: absolute;
+            left: 30px;
+            top: 30px;
+            z-index: 100;
+            font-size: 16px;
+        }
+
+        #class_wrap .class_cont .text b {
+            display: block;
+            padding: 5px 0;
+            font-size: 24px;
+        }
+
+        #class_wrap .class_cont .text .name {
+            font-size: 15px;
+        }
+
+        #class_wrap .class_cont div {
+            position: relative;
+            border-radius: 15px;
+            transition: transform 0.3s linear;
+        }
+
+        #class_wrap .class_cont .img {
+            display: block;
+            position: absolute;
+        }
+
+        #class_wrap .class_cont .li_01 {
+            margin: 0 20px;
+        }
+
+
+
+        /* ############ li 안의 div 개별 작업 ##########*/
+        /* 첫번째 li 안에 div*/
+        #class_wrap .class_cont .cont1 {
+            width: 370px;
+            height: 330px;
+            background-color: #0f4649;
+        }
+
+        #class_wrap .class_cont .cont1 a {
+            width: 370px;
+            height: 330px;
+        }
+
+        #class_wrap .class_cont .cont1 .img {
+            width: 280px;
+            height: 280px;
+            left: 90px;
+            top: 50px;
+        }
+
+        #class_wrap .class_cont .cont1 img {
+            width: 100%;
+        }
+
+        /*첫번째 li 안에 두번째 div */
+        #class_wrap .class_cont .cont2 {
+            width: 100%;
+            height: 150px;
+            background-color: #002e50;
+            margin-top: 20px;
+        }
+
+        #class_wrap .class_cont .cont2 a {
+            width: 370px;
+            height: 150px;
+        }
+
+        #class_wrap .class_cont .cont2 .img {
+            width: 150px;
+            height: 150px;
+            left: 222px;
+            top: 0;
+        }
+
+        #class_wrap .class_cont .cont2 .img img {
+            height: 100%;
+            border-radius: 15px;
+        }
+
+
+
+        /*두번째 li 안에  div */
+        #class_wrap .class_cont .cont3 {
+            width: 100%;
+            height: 100%;
+            background-color: #a63a56;
+        }
+
+        #class_wrap .class_cont .cont3 a {
+            width: 370px;
+            height: 500px;
+        }
+
+        #class_wrap .class_cont .cont3 .img {
+            width: 370px;
+            height: 460px;
+            left: 0;
+            top: 33px;
+        }
+
+        #class_wrap .class_cont .cont3 .img img {
+            width: 100%;
+            border-radius: 20px;
+        }
+
+        /*세번째 li 안에  div */
+        #class_wrap .class_cont .cont4 {
+            width: 100%;
+            height: 230px;
+            background-color: #8a7630;
+        }
+
+        #class_wrap .class_cont .cont4 a {
+            width: 370px;
+            height: 230px;
+        }
+
+        #class_wrap .class_cont .cont4 .img {
+            width: 230px;
+            height: 230px;
+            left: 140px;
+            top: 0;
+        }
+
+        #class_wrap .class_cont .cont4 .img img {
+            height: 100%;
+            border-radius: 15px;
+        }
+
+        /*세번째 li 안에  두번째div */
+        #class_wrap .class_cont .cont5 {
+            width: 100%;
+            height: 250px;
+            margin-top: 20px;
+            background: #75391d;
+        }
+
+        #class_wrap .class_cont .cont5 a {
+            width: 370px;
+            height: 250px;
+        }
+
+        #class_wrap .class_cont .cont5 .img {
+            width: 250px;
+            height: 250px;
+            left: 120px;
+            top: 0;
+        }
+
+        #class_wrap .class_cont .cont5 .img img {
+            height: 100%;
+            border-radius: 14px;
+        }
+
+        /*############################ sect_exhibition  ############################*/
+        #sect_exhibit {
+            width: 100%;
+            height: 1000px;
+            background-color: #fff;
+        }
+
+        #exhi_wrap {
+            width: 100%;
+            padding-top: 200px;
+            position: relative;
+        }
+
+        #exhi_wrap #exhi_box {
+            width: 1200px;
+            margin: 0 auto;
+            position: relative;
+        }
+
+        /* 	bg 기능 : 애니메이션 적용 */
+        #exhi_wrap #exhi_box .bgArea {
+            width: 100%;
+            position: absolute;
+            top: 0;
+            left: 0;
+            z-index: 1;
+        }
+
+        #exhi_wrap #exhi_box .bgArea p {
+            width: 100%;
+            position: absolute;
+            top: 0;
+            left: 0;
+            z-index: 2;
+            opacity: 0.5;
+        }
+
+        #exhi_wrap #exhi_box .bgArea .bgMove01 {
+            left: -220px;
+            animation: move1 3s infinite alternate;
+        }
+
+        @keyframes move1 {
+            0% {
+                transform: scale(0.6);
+            }
+
+            100% {
+                transform: scale(0.8);
+            }
+        }
+
+        #exhi_wrap #exhi_box .bgArea .bgMove02 {
+            top: 100px;
+            animation: move1 3s infinite alternate;
+        }
+
+        #exhi_wrap #exhi_box .bgArea .bgMove03 {
+            top: -168px;
+            left: 267px;
+            animation: move2 3s infinite alternate;
+        }
+
+        @keyframes move2 {
+            0% {
+                transform: scale(0.9);
+            }
+
+            100% {
+                transform: scale(0.7);
+            }
+        }
+
+        #exhi_wrap #exhi_box .bgArea p img {
+            width: 100%;
+        }
+
+        #exhi_box .exhi_tit h3 {
+            width: 500px;
+            height: 100%;
+            font-size: 30px;
+            color: #6d71f9;
+        }
+
+        #exhi_box .exhi_tit h3 span {
+            font-size: 25px;
+            padding-left: 25px;
+            color: #272848;
+        }
+
+        #exhi_box .exhi_cont {
+            width: 900px;
+            height: 500px;
+            margin: 50px auto 0;
+            overflow: hidden;
+        }
+
+        #exhi_box .exhi_cont ul {
+            width: 2700px;
+            height: 470px;
+        }
+
+        #exhi_box .exhi_cont li {
+            width: 900px;
+            float: left;
+            position: relative;
+        }
+
+        #exhi_box .descBox {
+            width: 670px;
+            height: 300px;
+            margin-top: 100px;
+            background-color: #272848;
+            color: #fff;
+            padding-left: 50px;
+        }
+
+        #exhi_box .descBox p {
+            font-size: 16px;
+            padding-top: 30px;
+        }
+
+        #exhi_box .descBox p strong {
+            font-size: 25px;
+        }
+
+        #exhi_box .mdesc {
+            display: none;
+        }
+
+        #exhi_box .imgBox {
+            width: 400px;
+            height: 500px;
+            position: absolute;
+            top: 0;
+            right: 0;
+        }
+
+        #exhi_box .imgBox a {
+            display: block;
+            width: 100%;
+        }
+
+        #exhi_box .imgBox a img {
+            width: 100%;
+        }
+
+        #exhi_box .moreLink {
+            width: 200px;
+            color: #fff;
+            position: absolute;
+            bottom: 20px;
+            left: 49px;
+        }
+
+        #exhi_box .moreLink a {
+            color: #fff;
+        }
+
+        /*버튼 영역 */
+        /**
+        #exhi_box .BtnArea{width:200px;color:#aaa;position:absolute; bottom:24px; left:418px;z-index:2;}
+        #exhi_box .BtnArea a{color:#fff;}
+        #exhi_box .BtnArea i{font-style:normal;color:#fff;}
+        **/
+        #exhi_box .BtnArea {
+            width: 200px;
+            position: absolute;
+            bottom: 120px;
+            left: 500px;
+            z-index: 2;
+        }
+
+        #exhi_box .BtnArea a {
+            padding: 0 20px;
+            color: #fff;
+            font-size: 20px;
+        }
+
+        #exhi_box .BtnArea span {
+            color: #fff;
+        }
+
+        /*############################ sect_noticeArea  ############################*/
+        #sect_noticeArea {
+            width: 100%;
+            height: 500px;
+        }
+
+        /*########## sect_noticeArea / contBox ########## */
+        #contBox {
+            width: 1500px;
+            height: 300px;
+            margin: 0 auto;
+        }
+
+        #contBox div {
+            width: 400px;
+            float: left;
+        }
+
+        /*########## sect_noticeArea / contBox /.notice ########## */
+        #contBox .notice {
+            width: 400px;
+            height: 299px;
+            border-bottom: 1px solid #ccc;
+            margin: 0 50px;
+        }
+
+        #contBox .notice_tit {
+            width: 100%;
+            height: 30px;
+        }
+
+        #contBox .notice_tit h3 {
+            width: 200px;
+            float: left;
+        }
+
+        #contBox .notice_tit h4 {
+            display: none;
+        }
+
+        #contBox .notice_tit p {
+            width: 200px;
+            float: left;
+            text-align: right;
+        }
+
+        #contBox .notice ul {
+            width: 100%;
+            margin-top: 60px;
+        }
+
+        #contBox .notice li {
+            width: 100%;
+            padding: 20px 0;
+        }
+
+        #contBox .notice li a {
+            display: block;
+            width: 300px;
+            float: left;
+        }
+
+        #contBox .notice li span {
+            display: block;
+            width: 100px;
+            text-align: right;
+            float: left;
+        }
+
+        /*########## sect_noticeArea / contBox /.customer ########## */
+        #contBox .customer {
+            width: 400px;
+            height: 299px;
+            border-bottom: 1px solid #ccc;
+            margin: 0 50px;
+        }
+
+        #contBox .customer h3 {
+            width: 100%;
+            height: 30px;
+        }
+
+        #contBox .customer p {
+            width: 100%;
+            padding: 40px 0 30px;
+        }
+
+        #contBox .customer strong {
+            font-size: 50px;
+        }
+
+        #contBox .customer span {
+            font-size: 18px;
+            padding-left: 15px;
+        }
+
+        #contBox .customer em {
+            font-style: normal;
+        }
+
+        #contBox .customer b {
+            font-size: 20px;
+        }
+
+        #contBox .customer ul {
+            width: 100%;
+        }
+
+        #contBox .customer li {
+            width: 120px;
+            float: left;
+            padding-top: 40px;
+        }
+
+        /*모바일 영역*/
+        #mcontbox .mCustomer {
+            display: none;
+        }
+
+
+        /*########## sect_noticeArea / contBox /.shop_evt ########## */
+        #contBox .shop_evt {
+            width: 400px;
+            margin: 0 50px;
+        }
+
+        #contBox .shop_evt h3 {
+            width: 100%;
+            height: 30px;
+        }
+
+        #contBox .evt_box {
+            width: 400px;
+            height: 270px;
+            overflow: hidden;
+        }
+
+        #contBox .evt_box ul {
+            width: 1200px;
+            height: 240px;
+            padding-top: 30px;
+        }
+
+        #contBox .evt_box li {
+            width: 400px;
+            height: 240px;
+            float: left;
+        }
+
+        #contBox .evt_box a {
+            display: block;
+            width: 100%;
+        }
+
+        #contBox .evt_box a img {
+            width: 100%;
+            border-radius: 18px;
+        }
+
+
+
+        /*################################## footer  ##########################################*/
+        #footer {
+            width: 100%;
+            height: 350px;
+            background-color: #e8e6f3;
+        }
+
+        #foot_wrap {
+            width: 1500px;
+            height: 250px;
+            padding: 50px 0;
+            margin: 0 auto;
+            font-size: 14px;
+            color: #8D87B4;
+        }
+
+        #copy_box {
+            width: 100%;
+        }
+
+        #copy_box h2 {
+            width: 100px;
+            float: left;
+        }
+
+        #copy_box h2 img {
+            width: 100%;
+        }
+
+        #copy_box .menu {
+            width: 1300px;
+            margin-left: 120px;
+            color: #312E4D;
+            padding-bottom: 30px;
+        }
+
+        #copy_box .menu li {
+            display: inline;
+            font-weight: 700;
+        }
+
+        #copy_box .menu li a {
+            padding: 0 20px;
+        }
+
+        #copy_box .mo_menu {
+            display: none;
+        }
+
+
+        #copy_box .copyDesc {
+            width: 1300px;
+            height: 150px;
+        }
+
+        #copy_box p {
+            width: 700px;
+            float: left;
+            line-height: 25px;
+            margin-left: 40px;
+        }
+
+        #copy_box p a {
+            color: #8D87B4;
+            padding-right: 5px;
+        }
+
+        #copy_box span {
+            padding-right: 10px;
+        }
+
+        #copy_box em {
+            font-style: normal;
+            font-size: 12px;
+            color: #312E4D;
+        }
+
+        /* 모바일 영역 새로 만든 구역 */
+        #copy_box .copyDesc .mCopy {
+            display: none;
+        }
+
+        #copy_box .sns {
+            width: 350px;
+            float: left;
+            padding-left: 100px;
+        }
+
+        #copy_box .sns li {
+            width: 60px;
+            float: left;
+            padding-left: 10px;
+            opacity: 0.5;
+        }
+
+
+
+        /*################################## 미디어 쿼리 영역  ##########################################*/
+
+        /*################################ pc 1025px~ 1920px  ######################################*/
+
+        @media all and (min-width:1025px) and (max-width:1920px) {
+
+            /*############################ sect_hotclass  ############################*/
+
+            /* ##### 기능 :마우스 hover ##### */
+            #class_wrap .class_cont .cont1:hover {
+                transform: translatey(-10px);
+                box-shadow: 0px 5px 10px rgba(15, 70, 73, 0.7);
+            }
+
+            #class_wrap .class_cont .cont2:hover {
+                transform: translatey(-10px);
+                box-shadow: 0px 5px 10px rgba(0, 46, 80, 0.7);
+            }
+
+            #class_wrap .class_cont .cont3:hover {
+                transform: translatey(-10px);
+                box-shadow: 0px 5px 10px rgba(166, 58, 86, 0.7);
+            }
+
+            #class_wrap .class_cont .cont4:hover {
+                transform: translatey(-10px);
+                box-shadow: 0px 5px 10px rgba(138, 118, 48, 0.7);
+            }
+
+            #class_wrap .class_cont .cont5:hover {
+                transform: translatey(-10px);
+                box-shadow: 0px 5px 10px rgba(117, 57, 29, 0.7);
+            }
+
+        }
+
+        /*################################ 태블릿 1024px~ 768px  ######################################*/
+
+        @media all and (min-width:767px) and (max-width:1024px) {
+
+            /*############################ sect_main  ############################*/
+            #sect_main {
+                width: 100%;
+                height: 700px;
+                padding-top: 70px;
+                overflow: hidden;
+            }
+
+            #main_slide {
+                width: 1100px;
+                height: 600px;
+                margin: 0 auto;
+                position: relative;
+            }
+
+            #main_slide .slideArea {
+                width: 3600px;
+                height: 100%;
+            }
+
+            #main_slide .slideArea .slideList {
+                width: 1040px;
+                float: left;
+                position: relative;
+                margin: 0 30px
+            }
+
+            #main_slide .slide_desc {
+                width: 1000px;
+                position: absolute;
+                top: 120px;
+                left: 80px;
+                font-size: 24px;
+                color: #fff;
+            }
+
+            #main_slide .slide_desc p {
+                width: 150px;
+                border-radius: 30px;
+                border: 2px solid #fff;
+                text-align: center;
+                font-size: 20px;
+                padding: 5px 0;
+            }
+
+            #main_slide .slide_desc h4 {
+                font-size: 30px;
+                padding-top: 10px;
+            }
+
+            #main_slide .slide_desc h3 {
+                font-size: 40px;
+                text-transform: uppercase;
+            }
+
+            #main_slide .slide_img img {
+                width: 100%;
+                border-radius: 15px;
+            }
+
+            /*버튼에 해당*/
+            #main_slide .mainBtnArea {
+                width: 180px;
+                height: 50px;
+                position: absolute;
+                top: 550px;
+                right: 30px;
+                z-index: 2;
+            }
+
+            #main_slide .mainBtnArea a {
+                display: block;
+                width: 50px;
+                height: 50px;
+                margin-left: 10px;
+                border-radius: 25px;
+                float: left;
+                background-color: rgba(179, 179, 179, 0.5);
+            }
+
+            #main_slide .mainBtnArea img {
+                width: 100%;
+                border-radius: 25px;
+            }
+
+            /* 모바일 영역에 해당함 */
+            #main_slide .slide_desc .subtitle {
+                display: none;
+            }
+
+            #main_slide .slide_img a {
+                display: block;
+                width: 100%;
+            }
+
+            #main_slide .mslide_img {
+                display: none;
+            }
+
+
+        }
+
+        /*################################ 스마트폰 세로 767px~ 481px  #################################*/
+
+
+        /*################################ 스마트폰 가로 320px~ 480px #################################*/
+        @media all and (min-width:320px) and (max-width:480px) {
+
+            /*########################## header  ##########################*/
+
+            #header {
+                width: 100%;
+                height: 80px;
+                /* box-shadow:5px 3px 10px rgba(0,0,0,0.3); */
+            }
+
+
+            /*########################## headerWrap  ############################*/
+            #headerWrap {
+                width: 100%;
+                height: 80px;
+            }
+
+            /* 로고영역*/
+            #mainmenuWrap {
+                width: 100%;
+            }
+
+            #mainmenuWrap .menuArea {
+                width: 100%;
+                height: 80px;
+            }
+
+            #mainmenuWrap .menuArea p {
+                width: 70px;
+                height: 60px;
+                position: absolute;
+                left: 50%;
+                top: 50%;
+                transform: translate(-50%, -50%);
+            }
+
+
+            /*############# mainmenuWrap / .infoMenu ############# */
+            #mainmenuWrap .menuArea .infoMenu {
+                display: none;
+            }
+
+            /*############# mainmenuWrap / gnbArea ############## */
+            #gnbArea {
+                width: 100%;
+            }
+
+            #gnbArea .gnb {
+                float: none;
+                display: none;
+            }
+
+            #gnbArea .gnbicon {
+                width: 100%;
+                height: 70px;
+                float: none;
+            }
+
+            #gnbArea .gnbicon li {
+                width: 30px;
+                height: 30px;
+                margin: 0;
+                margin-top: 25px;
+                float: left;
+            }
+
+            #gnbArea .gnbicon .mgnbicon {
+                display: none;
+            }
+
+            #gnbArea .gnbicon .mgnbicon0 {
+                padding: 0 10px;
+            }
+
+            #gnbArea .gnbicon .mgnbicon1 {
+                float: right;
+                padding: 0 10px;
+            }
+
+            #gnbArea .gnbicon li a {
+                display: block;
+                text-align: center;
+            }
+
+            #gnbArea .gnbicon li:first-child {
+                display: block;
+            }
+
+            #gnbArea:after {
+                content: "";
+                display: block;
+                clear: both;
+            }
+
+            /*############################ sect_main  ############################*/
+            /*
+				
+			 */
+            #sect_main {
+                width: 100%;
+                height: 600px;
+                padding-top: 5px;
+            }
+
+            #main_slide {
+                width: 100%;
+                height: 100%;
+                margin: 0;
+                overflow: hidden;
+            }
+
+            #main_slide .slideArea {
+                width: 100%;
+                height: 100%;
+                margin-left: 0;
+            }
+
+            #main_slide .slideArea .slideList {
+                width: 100%;
+                float: left;
+                position: relative;
+                margin: 0;
+            }
+
+            #main_slide .slide_desc {
+                width: 100%;
+                position: absolute;
+                left: 0;
+                top: 73%;
+                text-align: center;
+            }
+
+            #main_slide .slide_desc p {
+                width: 120px;
+                border: 1px solid #fff;
+                font-size: 14px;
+                padding: 5px 0;
+                margin: 0 auto;
+            }
+
+            #main_slide .slide_desc h4 {
+                width: 100%;
+                font-size: 30px;
+                padding-top: 10px;
+                font-size: 16px;
+                position: absolute;
+                left: 50%;
+                top: 90%;
+                transform: translatex(-50%);
+                letter-spacing: 1px;
+                opacity: 0.8;
+            }
+
+            #main_slide .slide_desc h3,
+            #main_slide .slide_desc span {
+                display: none;
+            }
+
+            #main_slide .slide_desc .subtitle {
+                display: block;
+                font-size: 20px;
+                padding: 15px 0;
+            }
+
+            #main_slide .slide_img {
+                display: none;
+            }
+
+            #main_slide .mslide_img {
+                width: 100%;
+                height: 600px;
+                display: block;
+                /* background-color:#00f; */
+                background: url("img/mBlur0.png")no-repeat;
+            }
+
+            #main_slide .mslide_img a {
+                display: block;
+                width: 280px;
+                height: 600px;
+                margin: 0 auto;
+                padding-top: 50px;
+            }
+
+            #main_slide .mslide_img a img {
+                width: 100%;
+                border-radius: 20px;
+                box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.5);
+            }
+
+            #main_slide .mainBtnArea {
+                display: none;
+            }
+
+            /*############################ sect_newart  ############################*/
+
+
+
+            #sect_newart {
+                width: 100%;
+                height: 450px;
+                padding-top: 40px;
+            }
+
+            #bgArea p {
+                display: none;
+            }
+
+            /*############ sect_newart /newart_desc ###########*/
+            #newart_desc {
+                width: 96%;
+                padding-left: 4%;
+                margin: 0 auto;
+            }
+
+            #newart_desc h3 {
+                width: 100%;
+                padding: 10px 0;
+                font-size: 18px;
+            }
+
+            /*############ sect_newart / newart_desc  / .descList ###########*/
+            #newart_desc .descList {
+                width: 300px;
+                overflow: hidden;
+            }
+
+            #newart_desc .descList ul {
+                width: 100%;
+            }
+
+            #newart_desc .descList li {
+                width: 300px;
+                height: 150px;
+                float: left;
+            }
+
+            #newart_desc .descList li a {
+                display: block;
+                width: 100%;
+                font-size: 18px;
+            }
+
+            /*descList 디테일(글씨, 간격)*/
+            #newart_desc .descList li a strong {
+                font-size: 25px;
+                margin-bottom: 5px;
+            }
+
+            #newart_desc .descList li a span {
+                display: block;
+                width: 270px;
+                overflow: hidden;
+                white-space: nowrap;
+                text-overflow: ellipsis;
+                padding: 0;
+                color: #656565;
+                opacity: 0.8;
+            }
+
+            #newart_desc .descList li a em {
+                font-size: 20px;
+                padding-top: 5px;
+            }
+
+            /*############ sect_newart / newart_img  ###########*/
+            /* 이슈: 나중에 기능이 추가 된다면, 사이즈 수정 될수 있음!!!  */
+            #newart_img {
+                width: 100%;
+                overflow: hidden;
+            }
+
+            #newart_img .imgList {
+                width: 100%;
+                overflow: hidden;
+            }
+
+            #newart_img .imgList ul {
+                width: 20000%;
+                height: 200px;
+            }
+
+            #newart_img .imgList li {
+                width: 200px;
+                height: 200px;
+                margin-left: 5px;
+                float: left;
+            }
+
+            #newart_img .imgList a {
+                display: block;
+                width: 200px;
+                height: 200px;
+            }
+
+            #newart_img .imgList li img {
+                width: 100%;
+                border-radius: 100px;
+            }
+
+            */
+            /*############################ sect_mainArtist  ############################*/
+
+            #sect_mainArtist {
+                width: 100%;
+                height: 860px;
+                padding: 10px 0;
+            }
+
+            #art_wrap {
+                width: 100%;
+                height: 900px;
+                padding: 20px 0;
+            }
+
+            #art_cont {
+                width: 300px;
+                height: 100%;
+                margin: 0 auto;
+            }
+
+            #art_box {
+                width: 300px;
+                height: 100%;
+                margin: 0 auto;
+            }
+
+
+            #art_box .DescArea {
+                width: 100%;
+                height: 500px;
+                padding: 0;
+                position: relative;
+                background: url("img/art_bg0.png")no-repeat bottom;
+                background-size: 70%;
+            }
+
+            #art_box .artistDesc {
+                width: 100%;
+                height: 400px;
+                text-align: center;
+                color: #fff;
+                position: absolute;
+                left: 0;
+                top: 0;
+            }
+
+            #art_box .artistDesc h4 {
+                height: 150px;
+                font-size: 20px;
+                line-height: 295px;
+                background-image: url("img/white_logo.png");
+                background-repeat: no-repeat;
+                background-size: 30%;
+            }
+
+
+            #art_box .artistDesc h3 {
+                font-size: 30px;
+                padding: 20px 0;
+            }
+
+            #art_box .artistDesc p {
+                font-size: 18px;
+                padding: 10px 0;
+            }
+
+            #art_box .artistDesc span {
+                line-height: 35px;
+            }
+
+            #art_box .artistDesc .moreBtn {
+                width: 100%;
+                position: absolute;
+                left: 50%;
+                top: 770px;
+                transform: translatex(-50%);
+            }
+
+            #art_box .artistDesc .moreBtn a {
+                display: block;
+                width: 200px;
+                padding: 10px 20px;
+                border-radius: 25px;
+                margin: 0 auto;
+                box-shadow: 0 2px 5px rgba(0, 0, 0, 0.5);
+                font-size: 16px;
+            }
+
+
+            #art_box .artistImg {
+                width: 100%;
+                height: 340px;
+                position: static;
+            }
+
+            #art_box .artistImg ul {
+                width: 100%;
+                height: 100%;
+            }
+
+            #art_box .artistImg li {
+                width: 94px;
+                height: 94px;
+                float: left;
+                margin: 0 3px;
+                margin-bottom: 20px;
+                position: static;
+            }
+
+            #art_box .artistImg li a {
+                display: block;
+                width: 100%;
+                height: 100%;
+            }
+
+            #art_box .artistImg li img {
+                width: 100%;
+                border-radius: 10px;
+                box-shadow: 0 2px 6px rgba(0, 0, 0, 0.7);
+            }
+
+            #art_box .artistImg .text {
+                display: none;
+            }
+
+            #art_box .artistImg li:hover .text {
+                display: none;
+            }
+
+
+
+            /* 기능:bg 움직이는 애니메이션 효과 */
+            #art_box .bgDeco p {
+                width: 70px;
+                height: 70px;
+                opacity: 0.5;
+                position: absolute;
+                top: 0;
+                left: 0;
+                z-index: 2;
+            }
+
+            #art_box .bgDeco p img {
+                width: 100%;
+                border-radius: 35px;
+            }
+
+            #art_box .bgDeco .bgImg0 {
+                top: 0px;
+                left: 0px;
+                animation: bgmove 3s infinite alternate;
+            }
+
+            @keyframes bgmove {
+                0% {
+                    transform: scale(0.8);
+                }
+
+                100% {
+                    transform: scale(0.5);
+                }
+            }
+
+            #art_box .bgDeco .bgImg1 {
+                top: 210px;
+                left: 213px;
+                animation: bgmove1 2s infinite alternate;
+            }
+
+            @keyframes bgmove1 {
+                0% {
+                    transform: scale(0.8);
+                }
+
+                100% {
+                    transform: scale(1);
+                }
+            }
+
+            #art_box .bgDeco .bgImg2 {
+                top: 423px;
+                left: 16px;
+                animation: bgmove2 2s infinite alternate;
+            }
+
+            @keyframes bgmove2 {
+                0% {
+                    transform: scale(0.5);
+                }
+
+                100% {
+                    transform: scale(0.8);
+                }
+            }
+
+            #art_box .bgDeco span {
+                width: 30px;
+                height: 30px;
+                border-radius: 15px;
+                background-color: #fff;
+                position: absolute;
+                top: 0;
+                left: 0;
+                z-index: 3;
+            }
+
+            #art_box .bgDeco .cir1 {
+                top: -5px;
+                left: 230px;
+                opacity: 0.2;
+                transform: scale(0.5);
+            }
+
+            #art_box .bgDeco .cir2 {
+                top: 150px;
+                left: 90px;
+                opacity: 0.2;
+                transform: scale(1.2);
+            }
+
+            #art_box .bgDeco .cir3 {
+                top: 300px;
+                left: 0px;
+                opacity: 0.3;
+                transform: scale(0.4);
+            }
+
+            #art_box .bgDeco .cir4 {
+                top: 400px;
+                left: 248px;
+                opacity: 0.4;
+                transform: scale(0.5);
+            }
+
+            #art_box .bgDeco .cir5 {
+                top: 600px;
+                left: 226px;
+                opacity: 0.4;
+                transform: scale(0.8);
+            }
+
+
+            #art_box .cirBtn {
+                display: none;
+            }
+
+            /*#art_wrap:after(content:""; display:block; clear:both);*/
+            /*##############################################################*/
+
+
+            /*##################### sect_banner  #######################*/
+
+            #sect_banner {
+                width: 100%;
+                height: 370px;
+            }
+
+            #sect_banner p {
+                width: 100%;
+                height: 370px;
+                padding: 0;
+                background-color: #f5e0dd;
+            }
+
+            #sect_banner p a {
+                display: block;
+                width: 100%;
+                height: 100%;
+                color: #d6474d;
+                position: relative;
+                border-radius: 0;
+                margin: 0 auto;
+                background-image: url("img/banner_mbg.png");
+                background-repeat: no-repeat;
+                background-position: right bottom;
+            }
+
+            #sect_banner p a span {
+                position: absolute;
+            }
+
+            #sect_banner p a .text_left {
+                width: 150px;
+                height: 50px;
+                display: block;
+                float: none;
+                left: 10px;
+                top: 28px;
+                z-index: 1;
+            }
+
+            #sect_banner p a .text_left b {
+                display: block;
+                width: 100%;
+                height: 100%;
+                line-height: 0;
+            }
+
+            #sect_banner p a .text_left b i {
+                display: block;
+                font-size: 16px;
+                border: 2px solid #d6474d;
+                border-radius: 30px;
+                padding: 15px 0;
+            }
+
+            #sect_banner p a .text_right {
+                width: 300px;
+                height: 200px;
+                display: block;
+                float: none;
+                left: 10px;
+                top: 80px;
+                z-index: 2;
+            }
+
+            #sect_banner p a .text_right strong {
+                display: block;
+                font-size: 21px;
+                padding: 20px 0;
+                letter-spacing: -1px;
+            }
+
+            #sect_banner p a .text_right em {
+                display: none;
+            }
+
+            #sect_banner p a .text_right .m_text {
+                display: block;
+                width: 160px;
+                padding: 0;
+                font-size: 18px;
+                padding-top: 5px;
+                font-style: normal;
+            }
+
+            #sect_banner p a .date {
+                display: block;
+                width: 50px;
+                padding-left: 0px;
+                font-size: 16px;
+                position: absolute;
+                right: 0;
+                top: 20px;
+                padding-top: 10px;
+                font-style: normal;
+            }
+
+
+            /*#################### sect_todaypick  ###################*/
+            #sect_todaypick {
+                width: 100%;
+                height: 670px;
+                padding: 0;
+            }
+
+            /*############# sect_todaypick / pick_wrap ########*/
+            #sect_todaypick #pick_wrap {
+                width: 100%;
+            }
+
+            /*############ pick_wrap / pick_title  ###########*/
+            #pick_wrap .pick_title {
+                width: 100%;
+                height: 150px;
+                margin: 0 auto;
+            }
+
+            #pick_wrap .pick_title h3 {
+                width: 100%;
+                height: 50px;
+                float: none;
+                text-align: center;
+                padding: 30px 0;
+                font-size: 24px;
+            }
+
+            #pick_wrap .pick_title h3 span {
+                display: block;
+                font-size: 18px;
+                padding: 5px 0;
+            }
+
+            #pick_wrap .pick_title .select_btn {
+                width: 100%;
+                margin: 0;
+                padding: 0;
+                float: none;
+            }
+
+            #pick_wrap .pick_title .select_btn ul {
+                width: 300px;
+                margin: 0 auto;
+            }
+
+            #pick_wrap .pick_title .select_btn li {
+                width: 90px;
+                float: left;
+                text-align: center;
+                margin: 10px 4px;
+            }
+
+            #pick_wrap .pick_title .select_btn li a {
+                display: block;
+                width: 100%;
+                border-radius: 20px;
+                padding: 5px 0;
+                border: 1px solid #dddef5;
+            }
+
+            /* btn li 개별작업 */
+            #pick_wrap .pick_title .select_btn .btn04 {
+                margin-left: 60px;
+            }
+
+            /*script addClass*/
+            .btncss {
+                display: block;
+                width: 100%;
+                border-radius: 20px;
+                padding: 5px 0;
+                color: #7B75F3;
+                border: 1px solid #7B75F3;
+            }
+
+            /*############ pick_wrap / pick_cont  ###########*/
+
+            #pick_wrap .pick_cont {
+                width: 100%;
+                height: 450px;
+                text-align: center;
+            }
+
+            #pick_wrap .pick_cont ul {
+                width: 100%;
+                height: 450px;
+                margin: 0 auto;
+                overflow: hidden;
+            }
+
+            #pick_wrap .pick_cont li {
+                width: 100%;
+                height: 450px;
+                float: none;
+                border-radius: 0;
+                margin: 0;
+                background-repeat: no-repeat;
+            }
+
+            #pick_wrap .pick_cont .bgBlur01 {
+                background-image: url("img/pBlur0.png");
+            }
+
+            #pick_wrap .pick_cont .bgBlur02 {
+                background-image: url("img/pBlur1.png");
+            }
+
+            #pick_wrap .pick_cont .bgBlur03 {
+                background-image: url("img/pBlur2.png");
+            }
+
+
+            #pick_wrap .pick_cont li .imgArea {
+                width: 100%;
+                height: 330px;
+                overflow: hidden;
+            }
+
+            #pick_wrap .pick_cont li a {
+                display: block;
+                width: 250px;
+                height: 250px;
+                padding: 0;
+                transition: none;
+                margin: 40px auto 0;
+            }
+
+            #pick_wrap .pick_cont li a img {
+                width: 100%;
+                border-radius: 14px;
+            }
+
+            #pick_wrap .pick_cont .text {
+                width: 100%;
+                height: 120px;
+                font-size: 18px;
+                text-align: center;
+                font-family: "headerEN"
+            }
+
+            #pick_wrap .pick_cont .text strong {
+                font-size: 24px;
+            }
+
+            #pick_wrap .pick_cont .text span {
+                opacity: 0.8;
+            }
+
+            /*기능:hover 효과*/
+            #pick_wrap .pick_cont li:hover a {
+                transform: none;
+            }
+
+
+            /*############################ sect_hotclass  ############################*/
+            #sect_hotclass {
+                width: 100%;
+                height: 400px;
+                padding: 50px 0;
+            }
+
+            #class_wrap {
+                width: 100%;
+            }
+
+            /*############ class_wrap / class_title  ###########*/
+            #class_wrap .class_title {
+                width: 100%;
+                height: 80px;
+                padding-left: 10px;
+                margin: 0 auto;
+            }
+
+            #class_wrap .class_title h3 {
+                width: 100%;
+                height: 100%;
+                float: none;
+                font-size: 24px;
+            }
+
+            #class_wrap .class_title h3 span {
+                display: block;
+                font-size: 18px;
+                padding: 0;
+            }
+
+            #class_wrap .class_title p {
+                display: none;
+            }
+
+            #class_wrap .class_title .mobil_tum {
+                width: 200px;
+            }
+
+            #class_wrap .class_title .mobil_tum a {
+                width: 20px;
+                height: 20px;
+                border-radius: 10px;
+                background-color: #333;
+            }
+
+
+            /*############ class_wrap / class_cont  ###########*/
+
+            #class_wrap .class_cont {
+                width: 100%;
+                padding-top: 30px;
+                margin: 0 auto;
+            }
+
+            #class_wrap .class_cont ul {
+                width: 100%;
+                height: 260px;
+                overflow: hidden;
+            }
+
+            #class_wrap .class_cont li {
+                width: 300px;
+                height: 520px;
+                float: none;
+                margin: 0 auto;
+            }
+
+            #class_wrap .class_cont li a {
+                display: block;
+                color: #fff;
+            }
+
+            #class_wrap .class_cont .text {
+                display: block;
+                position: absolute;
+                left: 30px;
+                top: 30px;
+                z-index: 1;
+                font-size: 16px;
+            }
+
+            #class_wrap .class_cont .text b {
+                display: block;
+                padding: 5px 0;
+                font-size: 24px;
+            }
+
+            #class_wrap .class_cont .text .name {
+                font-size: 15px;
+            }
+
+            #class_wrap .class_cont div {
+                position: relative;
+                border-radius: 15px;
+            }
+
+            #class_wrap .class_cont .img {
+                display: block;
+                position: absolute;
+            }
+
+            #class_wrap .class_cont .li_01 {
+                margin: 0 auto;
+                height: 260px;
+            }
+
+            /* ############ li 안의 div 개별 작업 ##########*/
+            /* 첫번째 li 안에 div*/
+            #class_wrap .class_cont .cont1 {
+                width: 300px;
+                height: 260px;
+            }
+
+            #class_wrap .class_cont .cont1 a {
+                width: 300px;
+                height: 260px;
+            }
+
+            #class_wrap .class_cont .cont1 .img {
+                width: 200px;
+                height: 200px;
+                left: 104px;
+                top: 60px;
+            }
+
+            #class_wrap .class_cont .cont1 img {
+                width: 100%;
+            }
+
+
+            /*첫번째 li 안에 두번째 div */
+            #class_wrap .class_cont .cont2 {
+                width: 300px;
+                height: 260px;
+                margin: 0;
+            }
+
+            #class_wrap .class_cont .cont2 a {
+                width: 300px;
+                height: 260px;
+            }
+
+            #class_wrap .class_cont .cont2 .img {
+                width: 200px;
+                height: 200px;
+                left: 100px;
+                top: 60px;
+            }
+
+            #class_wrap .class_cont .cont2 .img img {
+                height: 100%;
+                border-radius: 0 0 15px;
+                opacity: 0.8;
+            }
+
+
+
+            /*두번째 li 안에  div */
+            #class_wrap .class_cont .cont3 {
+                width: 300px;
+                height: 260px;
+            }
+
+            #class_wrap .class_cont .cont3 a {
+                width: 300px;
+                height: 260px;
+            }
+
+            #class_wrap .class_cont .cont3 .img {
+                width: 200px;
+                height: 300px;
+                left: 99px;
+                top: 8px;
+            }
+
+            #class_wrap .class_cont .cont3 .img img {
+                width: 100%;
+                border-radius: 20px;
+            }
+
+
+            /*세번째 li 안에  div */
+            #class_wrap .class_cont .cont4 {
+                width: 300px;
+                height: 260px;
+            }
+
+            #class_wrap .class_cont .cont4 a {
+                width: 300px;
+                height: 260px;
+            }
+
+            #class_wrap .class_cont .cont4 .img {
+                width: 200px;
+                height: 200px;
+                left: 100px;
+                top: 60px;
+            }
+
+            #class_wrap .class_cont .cont4 .img img {
+                height: 100%;
+                border-radius: 15px;
+            }
+
+            /*세번째 li 안에  두번째div */
+            #class_wrap .class_cont .cont5 {
+                width: 300px;
+                height: 260px;
+                margin: 0;
+            }
+
+            #class_wrap .class_cont .cont5 a {
+                width: 300px;
+                height: 260px;
+            }
+
+            #class_wrap .class_cont .cont5 .img {
+                width: 250px;
+                height: 250px;
+                left: 120px;
+                top: 0;
+            }
+
+            #class_wrap .class_cont .cont5 .img img {
+                height: 100%;
+                border-radius: 14px;
+            }
+
+
+
+            /*############################ sect_exhibition  ############################*/
+            #sect_exhibit {
+                width: 100%;
+                height: 650px;
+            }
+
+            #exhi_wrap {
+                width: 100%;
+                padding: 0;
+                position: relative;
+            }
+
+            #exhi_wrap #exhi_box {
+                width: 100%;
+                margin: 0 auto;
+                position: relative;
+            }
+
+            /* bg 기능 : 애니메이션 적용 */
+            #exhi_wrap #exhi_box .bgArea {
+                display: none;
+                width: 100%;
+                position: absolute;
+                top: 0;
+                left: 0;
+                z-index: 1;
+            }
+
+            #exhi_wrap #exhi_box .bgArea p {
+                width: 100%;
+                position: absolute;
+                top: 0;
+                left: 0;
+                z-index: 2;
+                opacity: 0.5;
+            }
+
+            #exhi_wrap #exhi_box .bgArea .bgMove01 {
+                left: -120px;
+                animation: move1 5s infinite alternate;
+            }
+
+            @keyframes move1 {
+                0% {
+                    transform: rotate(30deg)scale(0.8);
+                }
+
+                100% {
+                    transform: rotate(60deg)scale(0.5);
+                }
+            }
+
+            #exhi_wrap #exhi_box .bgArea .bgMove02 {
+                top: 100px;
+                animation: move2 5s infinite alternate;
+            }
+
+            @keyframes move2 {
+                0% {
+                    transform: rotate(30deg)scale(0.8)translate(100px, 0);
+                }
+
+                100% {
+                    transform: rotate(60deg)scale(1.2)translate(80px, 300px);
+                }
+            }
+
+            #exhi_wrap #exhi_box .bgArea .bgMove03 {
+                top: -115px;
+                left: -100px;
+                animation: move3 3s infinite alternate;
+            }
+
+            @keyframes move3 {
+                0% {
+                    transform: translate(-100px);
+                }
+
+                100% {
+                    transform: translate(-50px);
+                }
+            }
+
+            #exhi_wrap #exhi_box .bgArea p img {
+                width: 100%;
+            }
+
+            #exhi_box .exhi_tit h3 {
+                width: 100%;
+                height: 100%;
+                font-size: 30px;
+                text-align: center;
+                padding: 50px 0 30px;
+                text-transform: uppercase;
+            }
+
+            #exhi_box .exhi_tit h3 span {
+                display: block;
+                font-size: 20px;
+                padding: 0;
+            }
+
+            #exhi_box .exhi_cont {
+                width: 100%;
+                height: 500px;
+                margin: 0;
+                /* overflow:hidden; */
+            }
+
+            #exhi_box .exhi_cont ul {
+                width: 100%;
+                height: 500px;
+                overflow: hidden;
+            }
+
+            #exhi_box .exhi_cont li {
+                width: 100%;
+                height: 500px;
+                float: none;
+                position: relative;
+            }
+
+            #exhi_box .descBox {
+                display: none;
+            }
+
+            #exhi_box .mdesc {
+                display: block;
+                width: 300px;
+                height: 200px;
+                position: absolute;
+                left: 0;
+                top: 0;
+                left: 50%;
+                top: 75%;
+                transform: translatex(-50%);
+                z-index: 2;
+            }
+
+            #exhi_box .mdesc a {
+                display: block;
+                width: 100%;
+                text-align: center;
+            }
+
+            #exhi_box .mdesc a span {
+                display: block;
+                padding-top: 8px;
+            }
+
+            #exhi_box .mdesc a b {
+                font-size: 20px;
+            }
+
+
+            #exhi_box .imgBox {
+                width: 300px;
+                height: 380px;
+                position: absolute;
+                left: 50%;
+                top: 0;
+                transform: translatex(-50%);
+            }
+
+            #exhi_box .imgBox a {
+                display: block;
+                width: 100%;
+                height: 350px;
+            }
+
+            #exhi_box .imgBox a img {
+                width: 100%;
+            }
+
+
+            /*############################ sect_noticeArea  ############################*/
+            #sect_noticeArea {
+                width: 100%;
+                height: 183px;
+            }
+
+            /*########## sect_noticeArea / contBox ########## */
+            #contBox {
+                width: 100%;
+                height: 80px;
+                margin: 0;
+                border-top: 1px solid #272848;
+            }
+
+            #contBox div {
+                width: 100%;
+                float: none;
+            }
+
+            /*########## sect_noticeArea / contBox /.notice ########## */
+            #contBox .notice {
+                width: 300px;
+                height: 50px;
+                border-bottom: 0;
+                margin: 0 auto;
+                padding: 15px 0;
+                background-color: #fff;
+            }
+
+            #contBox .notice_tit {
+                width: 50px;
+                height: 50px;
+                line-height: 50px;
+                text-align: center;
+                padding-left: 10px;
+                float: left;
+            }
+
+            #contBox .notice_tit h3 {
+                display: none;
+                float: none;
+            }
+
+            #contBox .notice_tit h4 {
+                display: block;
+                font-size: 20px;
+            }
+
+            #contBox .notice_tit p {
+                display: none;
+                float: none;
+            }
+
+            #contBox .notice ul {
+                width: 240px;
+                height: 50px;
+                line-height: 50px;
+                margin: 0;
+                float: left;
+                overflow: hidden;
+            }
+
+            #contBox .notice li {
+                width: 100%;
+                height: 50px;
+                padding: 0;
+                opacity: 0.8;
+            }
+
+            #contBox .notice li a {
+                display: block;
+                width: 100%;
+                float: none;
+                overflow: hidden;
+                white-space: nowrap;
+                text-overflow: ellipsis;
+            }
+
+            #contBox .notice li span {
+                display: none;
+                float: none;
+            }
+
+            /*########## sect_noticeArea / contBox /.customer ########## */
+            #contBox .customer {
+                display: none;
+            }
+
+            /*  모바일 영역 새로 제작  */
+            #mcontbox {
+                width: 100%;
+                height: 100px;
+                border-top: 1px solid #272848;
+                border-bottom: 1px solid #aac;
+                background-color: #e8e6f3;
+            }
+
+            #mcontbox .mCustomer {
+                display: block;
+                width: 300px;
+                height: 100px;
+                margin: 0 auto;
+            }
+
+            #mcontbox .mCustomer .mCustleft {
+                width: 104px;
+                float: left;
+                text-align: center;
+            }
+
+            #mcontbox .mCustomer .mCustleft a {
+                display: block;
+                width: 99px;
+                height: 60px;
+                line-height: 30px;
+                font-size: 18px;
+                font-weight: 700;
+                padding: 0 4px;
+                border-right: 1px solid #aac;
+                margin: 20px 0;
+            }
+
+            #mcontbox .mCustomer .mCustright {
+                width: 190px;
+                float: left;
+                font-size: 14px;
+                margin-left: 5px;
+                height: 60px;
+                line-height: 20px;
+                font-weight: 700;
+                text-align: center;
+                margin-top: 20px;
+                opacity: 0.6;
+            }
+
+            #mcontbox .mCustomer .mCustright p:last-child {
+                font-size: 13px;
+            }
+
+            /*########## sect_noticeArea / contBox /.shop_evt ########## */
+            #contBox .shop_evt {
+                display: none;
+            }
+
+
+            /*################################## footer  ##########################################*/
+            #footer {
+                width: 100%;
+                height: 250px;
+                background-color: #e8e6f3;
+            }
+
+            #foot_wrap {
+                width: 100%;
+                height: 250px;
+                padding: 25px 0;
+                margin: 0 auto;
+                font-size: 14px;
+                color: #8D87B4;
+            }
+
+            #copy_box {
+                width: 100%;
+            }
+
+            #copy_box h2 {
+                float: none;
+                display: none;
+            }
+
+            #copy_box .menu {
+                display: none;
+                width: 300px;
+                margin: 0;
+            }
+
+            #copy_box .menu li {
+                display: inline;
+                float: none;
+                font-weight: 700;
+                background-color: #aaa;
+            }
+
+            #copy_box .menu li a {
+                padding: 0 5px;
+            }
+
+            /* ############# mobil footer menu #############*/
+            #copy_box .mo_menu {
+                display: block;
+                width: 300px;
+                margin: 20px auto;
+                text-align: center
+            }
+
+            #copy_box .mo_menu li {
+                display: inline;
+                font-size: 13px;
+                ;
+                font-weight: 700;
+                opacity: 0.8;
+            }
+
+            #copy_box .mo_menu li span {
+                padding: 0 2px;
+            }
+
+            #copy_box .copyDesc {
+                width: 100%;
+                height: 150px;
+                font-size: 13px;
+            }
+
+            #copy_box .copyRight {
+                display: none;
+                color: #8D87B4;
+            }
+
+            #copy_box p {
+                width: 300px;
+                float: none;
+                margin: 0;
+                text-align: center;
+            }
+
+            #copy_box p a {
+                color: #8D87B4;
+                padding: 0;
+            }
+
+            #copy_box span {
+                padding: 0;
+            }
+
+            #copy_box .sns {
+                width: 200px;
+                float: none;
+                padding: 10px;
+                margin: 0 auto;
+            }
+
+            #copy_box .sns li {
+                width: 30px;
+                float: left;
+                padding: 0 5px;
+                opacity: 0.5;
+            }
+
+            #copy_box .sns li a {
+                width: 100%;
+            }
+
+            #copy_box .sns li a img {
+                width: 100%;
+            }
+
+            #copy_box .sns:after {
+                content: "";
+                display: block;
+                clear: both;
+            }
+
+
+            #copy_box .copyDesc .mCopy {
+                display: block;
+                width: 300px;
+                height: 180px;
+                margin: 0 auto;
+            }
+
+
